@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -165,7 +165,7 @@
 
       <div class="l_header_btn">
         <a href="contact.html" class="m_btn m_btn__mail"
-          >ご相談<span class="u_dn">・ご依頼</span>はこちら</a
+          >ご相談<span class="u_dn-sp">・ご依頼</span>はこちら</a
         >
       </div>
 
@@ -176,7 +176,7 @@
       </button>
 
       <svg
-        class="l_header_bg m_svg"
+        class="l_header_bg m_svg u_dn-pc"
         preserveAspectRatio="none"
         width="400"
         height="25"
@@ -205,7 +205,7 @@
       </div>
 
       <svg
-        class="top_kv_bg m_svg"
+        class="top_kv_bg m_svg u_dn-pc"
         preserveAspectRatio="none"
         width="375"
         height="38"
@@ -219,12 +219,12 @@
       </svg>
     </div>
 
-    <div class="top_scroll_down">
+    <div class="top_scroll_down u_dn-pc">
       <a href="#" class="top_scroll_down-txt">SCROLL</a>
     </div>
 
     <main class="l_main">
-      <section class="top_concept">
+      <section class="top_concept" id="concept">
         <div class="l_contents">
           <div class="l_container">
             <h2 class="m_section_ttl m_section_ttl__concept">大切な想い</h2>
@@ -274,7 +274,7 @@
       </section>
       <!-- /.top_concept -->
 
-      <section class="top_service m_white_bg">
+      <section class="top_service m_white_bg" id="service">
         <svg
           class="m_section_bg-top m_svg"
           preserveAspectRatio="none"
@@ -445,7 +445,7 @@
       </section>
       <!-- /.top_service -->
 
-      <section class="top_about">
+      <section class="top_about" id="about">
         <div class="l_contents">
           <div class="l_container-sm">
             <h2 class="m_section_ttl m_section_ttl__about">私のこと</h2>
@@ -701,14 +701,34 @@
 
             <div class="top_pricing_content-box">
               <div class="top_pricing_content">
-                <span class="top_pricing_num top_pricing_num__accent">01</span>
+                <span class="top_pricing_num top_pricing_num__accent">
+                  01
+                  <div class="top_pricing_circle">
+                    <svg class="top_pricing_circle-svg" viewBox="0 0 100 100">
+                      <path
+                        id="circle"
+                        class="top_pricing_circle-path"
+                        d="M 0 50 A 50 50 0 1 1 0 51 z"
+                      />
+                      <text class="top_pricing_circle-txt">
+                        <textPath xlink:href="#circle" startOffset="19%">
+                          おすすめ
+                        </textPath>
+                      </text>
+                    </svg>
+                  </div>
+                </span>
 
                 <div class="top_pricing_inner top_pricing_inner__accent">
                   <h3 class="top_pricing_head">
-                    <span class="top_pricing_head__sub"
+                    <span
+                      class="top_pricing_head-sub top_pricing_head-sub__accent"
                       >構成提案〜コーディングまで</span
                     >
-                    <span class="top_pricing_head__main">まるっとお任せ</span>
+                    <span
+                      class="top_pricing_head-main top_pricing_head-main__accent"
+                      >まるっとお任せ</span
+                    >
                   </h3>
 
                   <p class="top_pricing_price top_pricing_price__accent">
@@ -722,6 +742,60 @@
                   </p>
                 </div>
               </div>
+
+              <div class="top_pricing_content">
+                <span class="top_pricing_num">02</span>
+
+                <div class="top_pricing_inner">
+                  <h3 class="top_pricing_head">
+                    <span class="top_pricing_head-sub">デザイン持ち込みで</span>
+                    <span class="top_pricing_head-main">コーディングから</span>
+                  </h3>
+
+                  <p class="top_pricing_price">
+                    <span class="top_pricing_price-symbol">¥</span>
+                    <span class="top_pricing_price-value">50,000</span>
+                    <span class="top_pricing_price-unit">～</span>
+                  </p>
+
+                  <p class="top_pricing_msg">
+                    デザインは用意できるけど、実装に不安がある方に
+                  </p>
+                </div>
+              </div>
+
+              <div class="top_pricing_content">
+                <span class="top_pricing_num">03</span>
+
+                <div class="top_pricing_inner">
+                  <h3 class="top_pricing_head">
+                    <span class="top_pricing_head-sub">その他いろいろ</span>
+                    <span class="top_pricing_head-main"
+                      >よくある追加ご依頼</span
+                    >
+                  </h3>
+
+                  <p class="top_pricing_price">
+                    <span class="top_pricing_price-symbol">¥</span>
+                    <span class="top_pricing_price-value">5,000</span>
+                    <span class="top_pricing_price-unit">～</span>
+                  </p>
+
+                  <p class="top_pricing_msg">
+                    機能や演出をもう少し加えたい方に
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="top_pricing_supplement">
+              <p class="top_pricing_supplement-head">
+                ＼ その他デザインのご相談も ／
+              </p>
+              <p class="top_pricing_supplement-desc">
+                Webサイト以外にも、SNSやお店で使えるバナー・画像制作なども承っております。<br />
+                「ちょっとだけ頼みたい」というご依頼も歓迎です。
+              </p>
             </div>
 
             <div class="top_pricing_btn">
@@ -747,6 +821,168 @@
         </svg>
       </section>
       <!-- /.top_pricing -->
+
+      <section class="top_faq" id="faq">
+        <div class="l_contents">
+          <div class="l_container-sm">
+            <h2 class="m_section_ttl m_section_ttl__faq">よくある質問</h2>
+
+            <div class="top_faq_content-box">
+              <button class="top_faq_btn js_faq">
+                <div class="top_faq_content">
+                  <span class="top_faq_icon top_faq_icon__q">Q</span>
+                  <p class="top_faq_txt top_faq_txt__q">テキストテキスト</p>
+                  <div class="top_faq_arrow js_faq_mark"></div>
+                </div>
+                <div class="top_faq_open js_faq-a">
+                  <div class="top_faq_content top_faq_content__a">
+                    <span class="top_faq_icon top_faq_icon__a">A</span>
+                    <p class="top_faq_txt top_faq_txt__a">テキストテキスト</p>
+                  </div>
+                </div>
+              </button>
+              <button class="top_faq_btn js_faq">
+                <div class="top_faq_content">
+                  <span class="top_faq_icon top_faq_icon__q">Q</span>
+                  <p class="top_faq_txt top_faq_txt__q">テキストテキスト</p>
+                  <div class="top_faq_arrow js_faq_mark"></div>
+                </div>
+                <div class="top_faq_open js_faq-a">
+                  <div class="top_faq_content top_faq_content__a">
+                    <span class="top_faq_icon top_faq_icon__a">A</span>
+                    <p class="top_faq_txt top_faq_txt__a">テキストテキスト</p>
+                  </div>
+                </div>
+              </button>
+              <button class="top_faq_btn js_faq">
+                <div class="top_faq_content">
+                  <span class="top_faq_icon top_faq_icon__q">Q</span>
+                  <p class="top_faq_txt top_faq_txt__q">テキストテキスト</p>
+                  <div class="top_faq_arrow js_faq_mark"></div>
+                </div>
+                <div class="top_faq_open js_faq-a">
+                  <div class="top_faq_content top_faq_content__a">
+                    <span class="top_faq_icon top_faq_icon__a">A</span>
+                    <p class="top_faq_txt top_faq_txt__a">テキストテキスト</p>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.top_faq -->
     </main>
+
+    <div class="m_cta">
+      <div class="l_container-lg m_cta-inner">
+        <div class="m_cta_lead-box">
+          <p class="m_cta_lead">
+            ちょっとでも気になること、<br
+              class="u_dn-pc"
+            />まずはご相談ください！
+          </p>
+          <div class="m_cta_dotted-line"></div>
+        </div>
+
+        <div class="m_cta_msg-box">
+          <div class="m_cta_img-wrapper">
+            <img
+              src="img/cta_img.webp"
+              alt=""
+              class="m_cta_img"
+              width="660"
+              height="534"
+            />
+          </div>
+          <p class="m_cta_msg">
+            内容が決まっていなくても問題ありません。<br />
+            お話を伺いながら、イメージやご希望を一緒に整理していきましょう。<br />
+            まずはお気軽にご相談ください。
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- /.m_cta -->
+
+    <footer class="l_footer">
+      <div class="l_footer-inner">
+        <div class="l_footer-box">
+          <p class="l_footer_logo">
+            <a href="index.html" class="l_footer_logo-link">mzk design</a>
+          </p>
+
+          <div class="l_footer_btn">
+            <a href="contact.html" class="m_btn m_btn__mail"
+              >ご相談<span class="u_dn-sp">・ご依頼</span>はこちら</a
+            >
+          </div>
+        </div>
+
+        <div class="l_footer_nav">
+          <ul class="l_footer_nav-list">
+            <li class="l_footer_nav-item">
+              <a href="index.html" class="l_footer_nav-link">トップ</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="#concept" class="l_footer_nav-link">大切な想い</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="#service" class="l_footer_nav-link">できること</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="#about" class="l_footer_nav-link">私のこと</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="works.html" class="l_footer_nav-link">作ったもの</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="proccess.html" class="l_footer_nav-link">すすめ方</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="proccess.html#price" class="l_footer_nav-link"
+                >料金について</a
+              >
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="#faq" class="l_footer_nav-link">よくある質問</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="l_footer_sns">
+          <div class="l_footer_x-wrapper">
+            <img
+              src="img/x_icon.svg"
+              alt="Xのアイコン"
+              class="l_footer_x"
+              width="25"
+              height="26"
+            />
+          </div>
+          <div class="l_footer_insta-wrapper">
+            <img
+              src="img/instagram_icon.svg"
+              alt="instagramのアイコン"
+              class="l_footer_insta"
+              width="25"
+              height="25"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="l_footer_legal">
+        <a href="privacypolicy.html" class="l_footer_legal-link"
+          >プライバシーポリシー</a
+        >
+
+        <small class="l_footer_legal-copyright">
+          <p class="l_footer_legal-copyright-txt">
+            &copy; 2025 mzk design All Rights Reserved.
+          </p>
+        </small>
+      </div>
+    </footer>
   </body>
 </html>
