@@ -1,3 +1,28 @@
+"use strict";
+
+// hamburger
+const hamburger = document.querySelector(".js_hamburger");
+const navigation = document.querySelector(".js_navigation");
+const body = document.querySelector(".js_body");
+
+//ハンバーガーをクリックしたら
+hamburger.addEventListener("click", () => {
+  //それぞれに対してis-activeクラスをつけ外しする
+  hamburger.classList.toggle("is-active");
+  navigation.classList.toggle("is-active");
+  body.classList.toggle("is-active");
+});
+
+const navLinks = document.querySelectorAll(".l_header-nav_link");
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
+    hamburger.classList.remove("is-active");
+    navigation.classList.remove("is-active");
+    body.classList.remove("is-active");
+  });
+});
+
+// header pc固定
 const header = document.querySelector(".l_header");
 const trigger = document.querySelector(".top_kv");
 
@@ -64,3 +89,30 @@ const openingAnim = function (content) {
     }
   );
 };
+
+// フッター
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".js_header");
+  const footer = document.querySelector(".js_footer");
+
+  if (!header || !footer) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          header.classList.add("is-hidden");
+        } else {
+          header.classList.remove("is-hidden");
+        }
+      });
+    },
+    {
+      root: null, // ビューポートを基準にする
+      rootMargin: "0px", // 余白なし
+      threshold: 0, // 一部でも見えたら発火
+    }
+  );
+
+  observer.observe(footer);
+});
