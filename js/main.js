@@ -90,29 +90,18 @@ const openingAnim = function (content) {
   );
 };
 
-// フッター
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector(".js_header");
-  const footer = document.querySelector(".js_footer");
+// フッター消える
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
 
-  if (!header || !footer) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          header.classList.add("is-hidden");
-        } else {
-          header.classList.remove("is-hidden");
-        }
-      });
+  ScrollTrigger.create({
+    trigger: ".js_cta",
+    start: "top center",
+    end: "center center",
+    toggleClass: {
+      targets: ".js_header",
+      className: "is-hide",
     },
-    {
-      root: null, // ビューポートを基準にする
-      rootMargin: "0px", // 余白なし
-      threshold: 0, // 一部でも見えたら発火
-    }
-  );
-
-  observer.observe(footer);
+    markers: true,
+  });
 });
