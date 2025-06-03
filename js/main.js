@@ -7,13 +7,12 @@ const body = document.querySelector(".js_body");
 
 //ハンバーガーをクリックしたら
 hamburger.addEventListener("click", () => {
-  //それぞれに対してis-activeクラスをつけ外しする
   hamburger.classList.toggle("is-active");
   navigation.classList.toggle("is-active");
   body.classList.toggle("is-active");
 });
 
-const navLinks = document.querySelectorAll(".l_header-nav_link");
+const navLinks = document.querySelectorAll(".l_header_nav-link");
 navLinks.forEach((navLink) => {
   navLink.addEventListener("click", () => {
     hamburger.classList.remove("is-active");
@@ -22,17 +21,25 @@ navLinks.forEach((navLink) => {
   });
 });
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1080) {
+    // is-activeを全部外す
+    document.querySelector(".js_hamburger")?.classList.remove("is-active");
+    document.querySelector(".js_navigation")?.classList.remove("is-active");
+    document.querySelector(".js_body")?.classList.remove("is-active");
+  }
+});
+
 // header pc固定
-const header = document.querySelector(".l_header");
-const trigger = document.querySelector(".top_kv");
+const header = document.querySelector(".js_header");
+const main = document.querySelector(".l_main");
 
 window.addEventListener("scroll", () => {
-  const triggerBottom = trigger.getBoundingClientRect().bottom;
+  const mainTop = main.getBoundingClientRect().top;
+  const triggerPoint = window.innerHeight * 0.3;
 
-  if (triggerBottom <= 0) {
-    if (!header.classList.contains("is-fixed")) {
-      header.classList.add("is-fixed");
-    }
+  if (mainTop <= triggerPoint) {
+    header.classList.add("is-fixed");
   } else {
     header.classList.remove("is-fixed");
   }
@@ -96,12 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ScrollTrigger.create({
     trigger: ".js_cta",
-    start: "top center",
-    end: "center center",
+    start: "center center",
     toggleClass: {
       targets: ".js_header",
       className: "is-hide",
     },
-    markers: true,
+    endTrigger: ".js_footer",
+    end: "center center",
   });
 });

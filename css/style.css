@@ -108,7 +108,7 @@ body {
   transform: translateX(-50%);
   width: 100%;
   max-width: 1080px;
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-out;
 }
 @media screen and (min-width: 1080px) {
   .l_header {
@@ -118,22 +118,6 @@ body {
     top: 24px;
     left: 50%;
     transform: translateX(-50%);
-    transition: opacity 0.8s ease;
-  }
-  .l_header.is-fixed {
-    padding-top: 0;
-    position: fixed;
-    opacity: 0;
-    animation: fadeInFixed 0.4s ease-in-out forwards;
-  }
-
-  @keyframes fadeInFixed {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 }
 .l_header_logo {
@@ -148,11 +132,107 @@ body {
   }
 }
 .l_header_nav {
+  /* display: none; */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* display: block; */
+}
+/* hamburger　開いたとき */
+
+.is-active .l_header_nav-list {
+  position: absolute;
+  top: calc(58px + 25px + 64px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 215px;
+}
+.is-active .l_header_nav-item {
+  position: relative;
+}
+.is-active .l_header_nav-item::before {
+  content: "";
+  background: url(../img/arrow.svg) no-repeat center / cover;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.is-active .l_header_nav-item::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: var(--black-color);
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.is-active .l_header_nav-item:last-child::after {
   display: none;
 }
+.is-active .l_header_nav-item:not(:first-child) {
+  margin-top: 32px;
+}
+.is-active .l_header_nav-link {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.is-active .l_header_nav-icon-wrapper {
+  width: 30px;
+  height: 30px;
+}
+.l_header_nav-icon-wrapper {
+  width: 30px;
+  height: 30px;
+}
+.l_header_nav-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.js_navigation {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--white-color);
+  z-index: var(--z-index-back);
+}
+
+.js_navigation.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+@media screen and (min-width: 1080px) {
+  .js_navigation {
+    all: unset; /* すべてリセットして通常レイアウトに戻す */
+    /* display: block; */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+  }
+}
+
 @media screen and (min-width: 1080px) {
   .l_header_nav {
-    display: block;
+    /* display: block; */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
   }
 
   .l_header_nav-list {
@@ -174,7 +254,6 @@ body {
     text-align: center;
   }
 }
-
 .l_header_btn {
   font-size: 12px;
 }
@@ -183,7 +262,6 @@ body {
     margin-left: 16px;
   }
 }
-
 .l_header_bg {
   top: 100%;
 }
@@ -193,7 +271,13 @@ body {
 .l_footer {
   max-width: 1080px;
   margin: 0 auto;
+  padding: 0 16px;
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .l_footer {
+    padding: 0;
+  }
 }
 .l_footer-inner {
   max-width: 1080px;
@@ -325,6 +409,7 @@ body {
   position: absolute;
   background: var(--black-color);
   left: 50%;
+  transition: all 0.3s;
 }
 
 .m_hamburger-bar:first-child {
@@ -480,7 +565,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
 }
 @media screen and (min-width: 768px) {
   .m_cta-inner {
@@ -1507,26 +1592,50 @@ body {
   }
 }
 
-.js_faq-a {
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-}
-
 .top_faq_content__a {
   align-items: flex-start;
 }
 
 /* js */
 
-.js_header.is-hide {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;
-  pointer-events: none;
-  /* クリックできないようにする */
+.js_body.is-active {
+  overflow: hidden;
+  width: 100%;
 }
-.is-hide {
+
+/* hamburger*/
+.js_hamburger.is-active .m_hamburger-bar:first-child {
+  top: 50%;
+  transform: translate(-50%, 0) rotate(45deg);
+}
+
+.js_hamburger.is-active .m_hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.js_hamburger.is-active .m_hamburger-bar:last-child {
+  top: 50%;
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+/* header pc 固定 */
+@media screen and (min-width: 1080px) {
+  .js_header.is-fixed {
+    padding-top: 0;
+    position: fixed;
+  }
+}
+
+/* header　非表示 */
+.js_header.is-hide {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease-in-out;
+}
+
+/* faq */
+.js_faq-a {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
 }
