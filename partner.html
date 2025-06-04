@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 文字コードと表示設定 -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- タイトル（ページタイトルを変更） -->
+    <title>mzk design | portfolio</title>
+
+    <!-- ページの説明（SEOに重要） -->
+    <meta
+      name="description"
+      content="mzk designのポートフォリオサイト。コーポレートサイトやLP、WordPress構築などの実績・サービスをご紹介しています。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- ファビコン -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- OGP設定（SNSでの見え方） -->
+    <meta property="og:site_name" content="mzk design" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="mzk design | portfolio" />
+    <meta
+      property="og:description"
+      content="コーポレートサイトやLP、WordPress構築などのWeb制作実績とサービスを掲載したポートフォリオサイトです。"
+    />
+    <meta property="og:image" content="https://example.com/ogp.jpg" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitterカード設定 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:description"
+      content="mzk designのポートフォリオ。Web制作実績とサービスを紹介しています。"
+    />
+    <meta name="twitter:image:src" content="https://example.com/ogp.jpg" />
+    <meta name="twitter:title" content="mzk design | portfolio" />
+
+    <!-- Google Fonts（変更可能） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS（必要に応じて変更） -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JavaScript（必要に応じて変更） -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body class="js_body">
+    <header class="l_header js_header">
+      <p class="l_header_logo">
+        <a href="index.html" class="l_header_logo-link">mzk design</a>
+      </p>
+
+      <nav class="l_header_nav js_navigation">
+        <ul class="l_header_nav-list">
+          <li class="l_header_nav-item">
+            <a href="#concept" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_concept.svg"
+                  alt="conceptのアイコン"
+                  class="l_header_nav-icon"
+                  width="24"
+                  height="17"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">大切な想い</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="#service" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_service.svg"
+                  alt="serviceのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">できること</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="#about" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_about.svg"
+                  alt="aboutのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">私のこと</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="works.html" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_works.svg"
+                  alt="worksのアイコン"
+                  class="l_header_nav-icon"
+                  width="24"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">作ったもの</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="process.html" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_process.svg"
+                  alt="processのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">すすめ方</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="process.html#price" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_price.svg"
+                  alt="priceのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">料金について</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="l_header_btn">
+        <a href="contact.html" class="m_btn m_btn__mail"
+          >ご相談<span class="u_dn-sp">・ご依頼</span>はこちら</a
+        >
+      </div>
+
+      <button class="m_hamburger js_hamburger">
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+      </button>
+
+      <svg
+        class="l_header_bg m_svg"
+        preserveAspectRatio="none"
+        width="400"
+        height="25"
+        viewBox="0 0 400 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z" />
+      </svg>
+    </header>
+
+    <div class="partner_kv">
+      <div class="partner_kv_box">
+        <h1 class="partner_kv_head">
+          <span class="partner_kv_head-inner">コーディングパートナーを</span
+          ><br />
+          <span class="partner_kv_head-inner">お探しの方へ</span>
+        </h1>
+
+        <p class="partner_kv_msg">
+          デザインの意図をくみとり、整然と・確実にコーディング。<br />
+          パートナーとして、安心して任せられる実装をお届けします。
+        </p>
+
+        <div class="partner_kv_btn u_dn-sp">
+          <a href="contact.html" class="m_btn m_btn__more"
+            >ご依頼はこちらから</a
+          >
+        </div>
+      </div>
+
+      <div class="partner_kv_img-wrapper">
+        <img
+          src="img/partner_kv.webp"
+          alt="キービジュアルのイラスト"
+          class="partner_kv_img"
+          width="934"
+          height="622"
+        />
+      </div>
+
+      <div class="partner_kv_btn u_dn-pc">
+        <a href="contact.html" class="m_btn m_btn__more">ご依頼はこちらから</a>
+      </div>
+
+      <svg
+        class="top_partner_bg m_svg"
+        preserveAspectRatio="none"
+        width="375"
+        height="38"
+        viewBox="0 0 375 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M375 0H0C24.5 12.6667 96.6 38 189 38C281.4 38 351.5 12.6667 375 0Z"
+        />
+      </svg>
+    </div>
+
+    <main class="l_main">
+      <section class="partner_worries">
+        <div class="l_contents">
+          <div class="l_container-sm">
+            <h2 class="paetner_section_ttl">
+              <span class="paetner_section_ttl-small">このような</span
+              ><span class="m_dot_txt">お</span><span class="m_dot_txt">困</span
+              ><span class="m_dot_txt">り</span><span class="m_dot_txt">ご</span
+              ><span class="m_dot_txt">と</span
+              ><span class="paetner_section_ttl-small">はありませんか？</span>
+            </h2>
+
+            <div class="partner_worries_content">
+              <p class="partner_worries_msg">
+                外部パートナーとして、<br />
+                以下のようなご依頼に対応しております
+              </p>
+
+              <div class="partner_worries_list">
+                <p class="partner_worries_txt">
+                  デザインデータをもとに、<span class="m_txt_accent"
+                    >コーディングのみ</span
+                  >を依頼したい
+                </p>
+                <p class="partner_worries_txt">
+                  <span class="m_txt_accent">WordPress構築</span>や<span
+                    class="m_txt_accent"
+                    >実装部分</span
+                  >だけを外注したいを依頼したい
+                </p>
+                <p class="partner_worries_txt">
+                  <span class="m_txt_accent">バナー制作</span>や<span
+                    class="m_txt_accent"
+                    >LPデザイン</span
+                  >などを定期的に依頼したい
+                </p>
+                <p class="partner_worries_txt">
+                  <span class="m_txt_accent">一部業務</span
+                  >を信頼できるパートナーに委託したい
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.partner_worries -->
+
+      <section class="partner_service m_white_bg">
+        <svg
+          class="m_svg_bg-top m_svg"
+          preserveAspectRatio="none"
+          width="400"
+          height="25"
+          viewBox="0 0 400 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z"
+          />
+        </svg>
+
+        <div class="l_contents_bg">
+          <div class="l_container-sm">
+            <h2 class="paetner_section_ttl">ご依頼いただける業務</h2>
+
+            <div class="partner_service_content-box">
+              <div class="partner_service_content">
+                <span class="partner_service_head partner_service_head__accent">
+                  HTML・CSS</span
+                >
+
+                <div
+                  class="partner_service_inner partner_service_inner__accent"
+                >
+                  <div
+                    class="partner_service_img-wrapper partner_service_img__accent"
+                  >
+                    <img
+                      src="img/html-css.svg"
+                      alt="HTMLとCSSのアイコン"
+                      class="partner_service_img"
+                      width="101"
+                      height="55"
+                    />
+                  </div>
+
+                  <p class="partner_service_txt">
+                    デザインデータをもとに、HTMLと保守性の高いCSSで実装します。<br />
+                    BEM設計などにも対応可能です。
+                  </p>
+                </div>
+              </div>
+
+              <div class="partner_service_content">
+                <span class="partner_service_head partner_service_head__accent">
+                  レスポンシブ対応</span
+                >
+
+                <div
+                  class="partner_service_inner partner_service_inner__accent"
+                >
+                  <div
+                    class="partner_service_img-wrapper partner_service_img__accent"
+                  >
+                    <img
+                      src="img/responsive_img.svg"
+                      alt="レスポンシブのアイコン"
+                      class="partner_service_img"
+                      width="124"
+                      height="80"
+                    />
+                  </div>
+
+                  <p class="partner_service_txt">
+                    スマホートフォン・タブレット・PCなど、複数の画面サイズに最適化。<br />
+                    モバイルファーストで設計します。
+                  </p>
+                </div>
+              </div>
+
+              <div class="partner_service_content">
+                <span class="partner_service_head"> JavaScript実装</span>
+
+                <div class="partner_service_inner">
+                  <div class="partner_service_img-wrapper">
+                    <img
+                      src="img/js_img.svg"
+                      alt="JavaScriptのアイコン"
+                      class="partner_service_img"
+                      width="62"
+                      height="80"
+                    />
+                  </div>
+
+                  <p class="partner_service_txt">
+                    アニメーションや簡単なインタラクションに対応可能です。<br />
+                    GSAPなどのライブラリも使用できます。
+                  </p>
+                </div>
+              </div>
+
+              <div class="partner_service_content">
+                <span class="partner_service_head"> WordPress構築</span>
+
+                <div class="partner_service_inner">
+                  <div class="partner_service_img-wrapper">
+                    <img
+                      src="img/wp_img.svg"
+                      alt="WordPressのアイコン"
+                      class="partner_service_img"
+                      width="82"
+                      height="80"
+                    />
+                  </div>
+
+                  <p class="partner_service_txt">
+                    カスタム投稿やACFを活用。<br />
+                    お客様ご自身で更新しやすい管理画面を構築します。
+                  </p>
+                </div>
+              </div>
+
+              <div class="partner_service_content">
+                <span class="partner_service_head partner_service_head__accent">
+                  Webデザイン</span
+                >
+
+                <div
+                  class="partner_service_inner partner_service_inner__accent"
+                >
+                  <div
+                    class="partner_service_img-wrapper partner_service_img__accent"
+                  >
+                    <img
+                      src="img/design_img.svg"
+                      alt="デザインのアイコン"
+                      class="partner_service_img"
+                      width="96"
+                      height="80"
+                    />
+                  </div>
+
+                  <p class="partner_service_txt">
+                    構成・トンマナに沿ったWebデザイン全般に対応しています。<br />
+                    Figma / Photoshop使用。
+                  </p>
+                </div>
+              </div>
+
+              <div class="partner_service_content">
+                <span class="partner_service_head partner_service_head__accent">
+                  柔軟な修正対応</span
+                >
+
+                <div
+                  class="partner_service_inner partner_service_inner__accent"
+                >
+                  <div
+                    class="partner_service_img-wrapper partner_service_img__accent"
+                  >
+                    <img
+                      src="img/correction_img.svg"
+                      alt="柔軟対応のアイコン"
+                      class="partner_service_img"
+                      width="120"
+                      height="80"
+                    />
+                  </div>
+
+                  <p class="partner_service_txt">
+                    ご要望に合わせて、細かな修正や調整にもスムーズに対応します。<br />
+                    お気軽にご相談ください。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <svg
+          class="m_svg_bg-bottom m_svg"
+          preserveAspectRatio="none"
+          width="400"
+          height="25"
+          viewBox="0 0 400 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z"
+          />
+        </svg>
+      </section>
+      <!-- /.top_service -->
+    </main>
+  </body>
+</html>
