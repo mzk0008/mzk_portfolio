@@ -3,24 +3,55 @@
 // hamburger
 const hamburger = document.querySelector(".js_hamburger");
 const navigation = document.querySelector(".js_navigation");
-const body = document.querySelector(".js_body");
+const body = document.querySelector("body"); // .js_body でなく bodyに直接適用
 
-//ハンバーガーをクリックしたら
 hamburger.addEventListener("click", () => {
+  const isOpen = navigation.classList.contains("is-active");
+
   hamburger.classList.toggle("is-active");
-  navigation.classList.toggle("is-active");
   body.classList.toggle("is-active");
+
+  if (isOpen) {
+    navigation.classList.remove("is-active");
+    body.style.overflow = "";
+  } else {
+    navigation.classList.add("is-active");
+    body.style.overflow = "hidden";
+  }
 });
 
-const navLinks = document.querySelectorAll(".l_header_nav-link");
-navLinks.forEach((navLink) => {
-  navLink.addEventListener("click", () => {
+// リンククリックで閉じる
+document.querySelectorAll(".l_header_nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
     hamburger.classList.remove("is-active");
     navigation.classList.remove("is-active");
     body.classList.remove("is-active");
+    body.style.overflow = "";
   });
 });
 
+// リサイズ時ハンバーガーちらつき防止
+class Resize {
+  constructor(target) {
+    this.timeoutId;
+    this.target = document.querySelector(target);
+
+    window.addEventListener("resize", this._resize.bind(this));
+  }
+
+  _resize() {
+    this.target.classList.add("is-resize");
+    clearTimeout(this.timeoutId);
+
+    this.timeoutId = setTimeout(() => {
+      this.target.classList.remove("is-resize");
+    }, 300);
+  }
+}
+
+new Resize("html"); // htmlタグでもbodyタグでもOK
+
+// 1080px以上でハンバーガー閉じる
 window.addEventListener("resize", () => {
   if (window.innerWidth >= 1080) {
     // is-activeを全部外す
