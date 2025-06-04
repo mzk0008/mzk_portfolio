@@ -35,6 +35,9 @@
 
 /*---------- body ----------*/
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: var(--black-color);
   font-family: var(--font-family-main);
@@ -68,6 +71,7 @@ body {
 }
 
 /* ----------layout---------- */
+
 .l_container-sm,
 .l_container-lg,
 .l_container {
@@ -98,7 +102,7 @@ body {
 /* header */
 .l_header {
   background: var(--white-color);
-  padding: 16px 16px 0 16px;
+  padding: 16px 16px 1px;
   display: flex;
   align-items: center;
   z-index: var(--z-index-header);
@@ -132,20 +136,18 @@ body {
   }
 }
 .l_header_nav {
-  /* display: none; */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  /* display: block; */
 }
-/* hamburger　開いたとき */
 
+/* hamburger　開いたとき */
 .is-active .l_header_nav-list {
   position: absolute;
-  top: calc(58px + 25px + 64px);
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 215px;
+  transform: translate(-50%, -50%);
+  width: 60%;
 }
 .is-active .l_header_nav-item {
   position: relative;
@@ -194,45 +196,11 @@ body {
   height: 100%;
 }
 
-.js_navigation {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  background: var(--white-color);
-  z-index: var(--z-index-back);
-}
-
-.js_navigation.is-active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
 @media screen and (min-width: 1080px) {
-  .js_navigation {
-    all: unset; /* すべてリセットして通常レイアウトに戻す */
-    /* display: block; */
+  .l_header_nav {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    position: static;
-    height: auto;
-    width: auto;
-    background: transparent;
-  }
-}
-
-@media screen and (min-width: 1080px) {
-  .l_header_nav {
-    /* display: block; */
-    opacity: 1;
-    visibility: visible;
-    pointer-events: none;
   }
 
   .l_header_nav-list {
@@ -267,7 +235,6 @@ body {
 }
 
 /* footer */
-
 .l_footer {
   max-width: 1080px;
   margin: 0 auto;
@@ -526,8 +493,11 @@ body {
   content: "Q&A";
 }
 
-/* svg背景 */
+.m_section_ttl__flow::before {
+  content: "flow";
+}
 
+/* svg背景 */
 .m_svg {
   fill: var(--white-color);
   position: absolute;
@@ -535,14 +505,19 @@ body {
   width: 100%;
   transform: translateY(-1px);
 }
-.m_section_bg-top {
-  top: -24px;
+.m_svg_bg-top {
+  top: -25px;
   transform: rotate(180deg);
 }
+.m_svg_bg-bottom {
+  bottom: -25px;
+}
+
 .m_white_bg {
   position: relative;
   background: var(--white-color);
-  margin: 25px 0;
+  /* margin: 25px 0; */
+  margin-top: 25px;
 }
 
 /* cta */
@@ -634,6 +609,60 @@ body {
   }
 }
 
+/* 下層kv */
+.m_kv {
+  position: relative;
+  top: calc(84px + 24px + 64px);
+  font-family: var(--font-family-head);
+  padding: 0 16px;
+  background-color: var(--white-color);
+  height: 245px;
+  /* margin-top: 64px; */
+}
+.m_kv_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 16px;
+  /* z-index: var(--z-index-page-top); */
+}
+.m_kv_head {
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+  /* position: relative; */
+}
+.m_kv_head::after {
+  /* position: relative; */
+  display: block;
+  color: var(--auxiliary-color);
+  font-size: 20px;
+}
+.m_kv_head__process::after {
+  content: "process";
+}
+.m_kv_dotted-line {
+  margin: 24px auto 0;
+  width: 80%;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--black-color),
+    var(--black-color) 8px,
+    transparent 8px,
+    transparent 12px
+  );
+}
+.m_kv_msg {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  margin: 16px auto 0;
+}
+
 /* ----------top---------- */
 
 .top_kv {
@@ -689,8 +718,8 @@ body {
     background-image: linear-gradient(
       transparent 0%,
       transparent 75%,
-      rgba(109 124 128 / 0.2) 75%,
-      rgba(109 124 128 / 0.2) 100%
+      var(--primary-color) 75%,
+      var(--primary-color) 100%
     );
     display: inline-block;
   }
@@ -1231,11 +1260,7 @@ body {
 
 .top_process_note {
   margin-top: 56px;
-}
-@media screen and (min-width: 768px) {
-  .top_process_note {
-    text-align: center;
-  }
+  text-align: center;
 }
 .top_process_btn {
   margin-top: 64px;
@@ -1454,7 +1479,6 @@ body {
 }
 
 /* top_faq */
-
 .top_faq_btn {
   background-color: var(--white-color);
   border-radius: 20px;
@@ -1462,50 +1486,41 @@ body {
   transition: all 0.3s ease-in-out;
   text-align: left;
 }
-
 .top_faq_btn:hover {
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
 }
-
 .top_faq_btn:first-child {
   margin-top: 56px;
 }
-
 .top_faq_btn:not(:first-child) {
   margin-top: 24px;
 }
-
 @media screen and (min-width: 1080px) {
   .top_faq_btn:not(:first-child) {
     margin-top: 32px;
   }
 }
-
 .top_faq_content {
   display: flex;
   padding: 12px 16px;
   justify-content: space-between;
   align-items: center;
 }
-
 @media screen and (min-width: 1080px) {
   .top_faq_content {
     padding: 16px 24px;
   }
 }
-
 .top_faq_icon {
   font-family: "Simonetta", serif;
   display: flex;
   justify-content: center;
   /* 横中央 */
-
   width: 35px;
   height: 35px;
   font-size: 18px;
 }
-
 @media screen and (min-width: 1080px) {
   .top_faq_icon {
     width: 50px;
@@ -1513,7 +1528,6 @@ body {
     font-size: 24px;
   }
 }
-
 .top_faq_icon__q {
   color: var(--white-color);
   border-radius: 100%;
@@ -1522,18 +1536,15 @@ body {
   /* 縦中央 */
   padding-bottom: 2px;
 }
-
 .top_faq_icon__a {
   color: var(--accent-color);
   line-height: 1;
   padding-top: 2.5px;
 }
-
 .top_faq_txt {
   margin-left: 16px;
   width: calc(100% - 35px - 16px);
 }
-
 .top_faq_txt__q {
   font-size: 16px;
 }
@@ -1545,7 +1556,6 @@ body {
     font-size: 16px;
   }
 }
-
 .top_faq_arrow {
   width: 10px;
   height: 10px;
@@ -1553,7 +1563,6 @@ body {
   position: relative;
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
-
 .top_faq_arrow::before {
   content: "";
   width: 100%;
@@ -1565,16 +1574,13 @@ body {
   right: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-
 .top_faq_arrow.js_faq_mark.is-open {
   transform: rotate(90deg) translate(50%, 50%);
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
-
 .top_faq_open {
   position: relative;
 }
-
 .top_faq_open::before {
   content: "";
   position: absolute;
@@ -1585,16 +1591,83 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
-
 @media screen and (min-width: 1080px) {
   .top_faq_open::before {
     width: calc(100% - 24px * 2);
   }
 }
-
 .top_faq_content__a {
   align-items: flex-start;
 }
+
+/* ---------- works ---------- */
+
+/* ---------- works-single ---------- */
+
+/* ---------- process ---------- */
+.process_flow {
+  margin-top: 195px;
+}
+.process_flow_content-box {
+  margin-top: 40px;
+}
+.process_flow_content {
+  position: relative;
+}
+.process_flow_content:not(:first-child) {
+  margin-top: 64px;
+}
+.process_flow_content::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 150px;
+  height: 150px;
+  opacity: 0.1;
+}
+.process_flow_content__01::before {
+  background: url(../img/process_img01.webp) no-repeat center bottom / contain;
+}
+.process_flow_content__02::before {
+  background: url(../img/process_img02.webp) no-repeat center bottom / contain;
+}
+.process_flow_content__03::before {
+  background: url(../img/process_img03.webp) no-repeat center bottom / contain;
+}
+.process_flow_content__04::before {
+  background: url(../img/process_img04.webp) no-repeat center bottom / contain;
+}
+.process_flow_head {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.process_flow_head-num {
+  color: var(--white-color);
+  width: 35px;
+  height: 35px;
+  background: var(--auxiliary-color);
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.process_flow_head-txt {
+  margin-left: 8px;
+}
+.process_flow_main {
+  margin-top: 16px;
+}
+.process_flow_sub {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* ---------- contact ---------- */
+
+/* ---------- partner ---------- */
 
 /* js */
 
@@ -1616,6 +1689,36 @@ body {
 .js_hamburger.is-active .m_hamburger-bar:last-child {
   top: 50%;
   transform: translate(-50%, 0) rotate(-45deg);
+}
+
+/* hamburger */
+.js_navigation {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--white-color);
+  z-index: var(--z-index-back);
+}
+.js_navigation.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+@media screen and (min-width: 1080px) {
+  .js_navigation {
+    all: unset; /* すべてリセットして通常レイアウトに戻す */
+    opacity: 1;
+    pointer-events: auto;
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+  }
 }
 
 /* header pc 固定 */
