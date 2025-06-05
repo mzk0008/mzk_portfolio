@@ -132,7 +132,7 @@ const openingAnim = function (content) {
   );
 };
 
-// フッター消える
+// フッター見えたらヘッダー消える
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
