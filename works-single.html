@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 文字コードと表示設定 -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- タイトル（ページタイトルを変更） -->
+    <title>mzk design | portfolio</title>
+
+    <!-- ページの説明（SEOに重要） -->
+    <meta
+      name="description"
+      content="mzk designのポートフォリオサイト。コーポレートサイトやLP、WordPress構築などの実績・サービスをご紹介しています。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- ファビコン -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- OGP設定（SNSでの見え方） -->
+    <meta property="og:site_name" content="mzk design" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="mzk design | portfolio" />
+    <meta
+      property="og:description"
+      content="コーポレートサイトやLP、WordPress構築などのWeb制作実績とサービスを掲載したポートフォリオサイトです。"
+    />
+    <meta property="og:image" content="https://example.com/ogp.jpg" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitterカード設定 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:description"
+      content="mzk designのポートフォリオ。Web制作実績とサービスを紹介しています。"
+    />
+    <meta name="twitter:image:src" content="https://example.com/ogp.jpg" />
+    <meta name="twitter:title" content="mzk design | portfolio" />
+
+    <!-- Google Fonts（変更可能） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS（必要に応じて変更） -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JavaScript（必要に応じて変更） -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body class="js_body white_body">
+    <header class="l_header js_header l_header_blue">
+      <p class="l_header_logo">
+        <a href="index.html" class="l_header_logo-link">mzk design</a>
+      </p>
+
+      <nav class="l_header_nav js_navigation">
+        <ul class="l_header_nav-list">
+          <li class="l_header_nav-item">
+            <a href="index.html#concept" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_concept.svg"
+                  alt="conceptのアイコン"
+                  class="l_header_nav-icon"
+                  width="24"
+                  height="17"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">大切な想い</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="index.html#service" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_service.svg"
+                  alt="serviceのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">できること</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="index.html#about" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_about.svg"
+                  alt="aboutのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">私のこと</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="works.html" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_works.svg"
+                  alt="worksのアイコン"
+                  class="l_header_nav-icon"
+                  width="24"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">作ったもの</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="process.html" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_process.svg"
+                  alt="processのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">すすめ方</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="process.html#price" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_price.svg"
+                  alt="priceのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">料金について</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="l_header_btn">
+        <a href="contact.html" class="m_btn m_btn__mail"
+          >ご相談<span class="u_dn-sp">・ご依頼</span>はこちら</a
+        >
+      </div>
+
+      <button class="m_hamburger js_hamburger">
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+      </button>
+
+      <svg
+        class="l_header_bg m_svg m_svg_blue"
+        preserveAspectRatio="none"
+        width="400"
+        height="25"
+        viewBox="0 0 400 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z" />
+      </svg>
+    </header>
+
+    <div class="m_kv m_kv_blue">
+      <svg
+        class="m_svg_bg-top m_svg m_svg_blue"
+        preserveAspectRatio="none"
+        width="400"
+        height="25"
+        viewBox="0 0 400 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z" />
+      </svg>
+
+      <div class="m_kv_box">
+        <h1 class="m_kv_head m_kv_head__works">作ったもの</h1>
+        <div class="m_kv_dotted-line"></div>
+
+        <p class="m_kv_msg">ひとつひとつの制作に込めた想いや工夫をご紹介</p>
+      </div>
+
+      <svg
+        class="m_svg_bg-bottom m_svg m_svg_blue"
+        preserveAspectRatio="none"
+        width="400"
+        height="25"
+        viewBox="0 0 400 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z" />
+      </svg>
+    </div>
+
+    <main class="l_main kasou_main">
+      <section class="works-single_content">
+        <div class="l_contents">
+          <div class="l_container-sm">
+            <article class="works-single_article">
+              <div class="works-single_thumb-wrapper">
+                <img
+                  src="img/works_img01.webp"
+                  alt="作品のサムネイル"
+                  class="works-single_thumb"
+                  width="800"
+                  height="453"
+                />
+              </div>
+
+              <div class="works-single_desc">
+                <p class="works-single_client">カフェ 雫-coffee drip-様</p>
+                <p class="works-single_title">
+                  カフェ 雫-coffee drip- 公式サイト
+                </p>
+
+                <p class="works-single_lead">
+                  ハンドドリップやサステナブルな取り組みにこだわるカフェ「雫
+                  -shizuku coffee
+                  drip-」様の、ブランドの世界観を丁寧に伝えるWebサイトを制作しました。<br />
+                  来店促進やSNSフォロー獲得を目的に、構成・導線設計からデザイン・実装まで一貫して担当しています。
+                </p>
+              </div>
+
+              <table class="works-single_table">
+                <tr class="works-single_tr">
+                  <th class="works-single_th">サイト種別</th>
+                  <td class="works-single_td">コーポレートサイト</td>
+                </tr>
+                <tr class="works-single_tr">
+                  <th class="works-single_th">課題</th>
+                  <td class="works-single_td">
+                    店舗のこだわりや想いを伝える手段がなく、新規のお客様に魅力が届きづらい。
+                  </td>
+                </tr>
+                <tr class="works-single_tr">
+                  <th class="works-single_th">目的</th>
+                  <td class="works-single_td">
+                    <span class="works-single_td-dot">
+                      コーヒー豆や店舗空間に込めた世界観・価値観を正しく伝え、ブランドの理解・共感・認知を広げる。</span
+                    >
+                    <span class="works-single_td-dot"
+                      >Webを通じて来店やSNSフォローへとつなげ、
+                      今後の展開に向けた土台を整備する。</span
+                    >
+                  </td>
+                </tr>
+                <tr class="works-single_tr">
+                  <th class="works-single_th">ターゲット</th>
+                  <td class="works-single_td">
+                    カフェ文化やライフスタイルに関心のある30〜40代女性を中心に、世界観や理念に共感する感度の高い層。
+                  </td>
+                </tr>
+                <tr class="works-single_tr">
+                  <th class="works-single_th">コンセプト</th>
+                  <td class="works-single_td">
+                    「丁寧に淹れた一杯と静寂の空間で、日常をリセットする上質なカフェ体験。」<br />
+                    ただの情報提供ではなく“体験”を届けるサイトに。
+                  </td>
+                </tr>
+                <tr class="works-single_tr">
+                  <th class="works-single_th">ポイント</th>
+                  <td class="works-single_td">
+                    <span class="works-single_td-dot">
+                      トップで「しずく」や「波紋」をモチーフにしたアニメーションを実装し、体験の入口としての印象を強化
+                    </span>
+                    <span class="works-single_td-dot"
+                      >色彩や余白、動きに“静けさ”と“自然なゆらぎ”を取り入れ、ブランドの空気感を視覚化</span
+                    >
+                    <span class="works-single_td-dot"
+                      >構成・UI設計は初見ユーザーでも流れが掴みやすいよう配慮し、回遊性と理解促進を両立</span
+                    >
+                  </td>
+                </tr>
+                <tr class="works-single_tr">
+                  <th class="works-single_th">制作期間</th>
+                  <td class="works-single_td">
+                    構成設計：約1週間<br />
+                    ワイヤー作成・デザイン：約1週間<br />
+                    コーディング：約2週間
+                  </td>
+                </tr>
+                <tr class="works-single_tr">
+                  <th class="works-single_th">使用ツール</th>
+                  <td class="works-single_td">
+                    Figma / VSCode HTML / CSS / JavaScript / WordPress
+                  </td>
+                </tr>
+              </table>
+            </article>
+            <!-- /.works-single -->
+
+            <div class="works-single_btn">
+              <a href="#" class="m_btn m_btn__site">サイトを見る </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.works-single_content -->
+
+      <section class="works-single_preview">
+        <div class="works-single_img-wrapper">
+          <img
+            src="img/works_preview01.webp"
+            alt="プレビュー画像"
+            class="works-single_img"
+            width="1280"
+            height="857"
+          />
+        </div>
+      </section>
+    </main>
+
+    <div class="m_cta js_cta">
+      <div class="l_container-lg m_cta-inner">
+        <div class="m_cta_lead-box">
+          <p class="m_cta_lead">
+            ちょっとでも気になること、<br
+              class="u_dn-tab"
+            />まずはご相談ください！
+          </p>
+          <div class="m_cta_dotted-line"></div>
+        </div>
+
+        <div class="m_cta_msg-box">
+          <div class="m_cta_img-wrapper">
+            <img
+              src="img/cta_img.webp"
+              alt=""
+              class="m_cta_img"
+              width="660"
+              height="534"
+            />
+          </div>
+          <p class="m_cta_msg">
+            内容が決まっていなくても問題ありません。<br />
+            お話を伺いながら、イメージやご希望を一緒に整理していきましょう。<br />
+            まずはお気軽にご相談ください。
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- /.m_cta -->
+
+    <footer class="l_footer js_footer">
+      <div class="l_footer-inner l_footer-inner__blue">
+        <div class="l_footer-box">
+          <p class="l_footer_logo">
+            <a href="index.html" class="l_footer_logo-link">mzk design</a>
+          </p>
+
+          <div class="l_footer_btn">
+            <a href="contact.html" class="m_btn m_btn__footer"
+              >ご相談<span class="u_dn-sp">・ご依頼</span>はこちら</a
+            >
+          </div>
+        </div>
+
+        <div class="l_footer_nav">
+          <ul class="l_footer_nav-list">
+            <li class="l_footer_nav-item">
+              <a href="index.html" class="l_footer_nav-link">トップ</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="index.html#concept" class="l_footer_nav-link"
+                >大切な想い</a
+              >
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="index.html#service" class="l_footer_nav-link"
+                >できること</a
+              >
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="index.html#about" class="l_footer_nav-link">私のこと</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="works.html" class="l_footer_nav-link">作ったもの</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="process.html" class="l_footer_nav-link">すすめ方</a>
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="process.html#price" class="l_footer_nav-link"
+                >料金について</a
+              >
+            </li>
+            <li class="l_footer_nav-item">
+              <a href="#faq" class="l_footer_nav-link">よくある質問</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="l_footer_sns">
+          <div class="l_footer_x-wrapper">
+            <img
+              src="img/x_icon.svg"
+              alt="Xのアイコン"
+              class="l_footer_x"
+              width="25"
+              height="26"
+            />
+          </div>
+          <div class="l_footer_insta-wrapper">
+            <img
+              src="img/instagram_icon.svg"
+              alt="instagramのアイコン"
+              class="l_footer_insta"
+              width="25"
+              height="25"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="l_footer_legal">
+        <a href="privacypolicy.html" class="l_footer_legal-link"
+          >プライバシーポリシー</a
+        >
+
+        <small class="l_footer_legal-copyright">
+          <p class="l_footer_legal-copyright-txt">
+            &copy; 2025 mzk design All Rights Reserved.
+          </p>
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>
