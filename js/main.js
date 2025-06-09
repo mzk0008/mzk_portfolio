@@ -80,6 +80,20 @@ window.addEventListener("scroll", () => {
   document.body.classList.toggle("is-scrolled", window.scrollY > 0);
 });
 
+// 下層からトップでもスクロール
+window.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash;
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target) {
+      // 少し遅らせるとスムーズ（必要に応じて調整）
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }
+});
+
 // faqのアコーディオン
 const faq = document.querySelectorAll(".js_faq");
 

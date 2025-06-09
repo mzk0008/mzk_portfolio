@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 文字コードと表示設定 -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- タイトル（ページタイトルを変更） -->
+    <title>mzk design | portfolio</title>
+
+    <!-- ページの説明（SEOに重要） -->
+    <meta
+      name="description"
+      content="mzk designのポートフォリオサイト。コーポレートサイトやLP、WordPress構築などの実績・サービスをご紹介しています。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- ファビコン -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- OGP設定（SNSでの見え方） -->
+    <meta property="og:site_name" content="mzk design" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="mzk design | portfolio" />
+    <meta
+      property="og:description"
+      content="コーポレートサイトやLP、WordPress構築などのWeb制作実績とサービスを掲載したポートフォリオサイトです。"
+    />
+    <meta property="og:image" content="https://example.com/ogp.jpg" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitterカード設定 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:description"
+      content="mzk designのポートフォリオ。Web制作実績とサービスを紹介しています。"
+    />
+    <meta name="twitter:image:src" content="https://example.com/ogp.jpg" />
+    <meta name="twitter:title" content="mzk design | portfolio" />
+
+    <!-- Google Fonts（変更可能） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS（必要に応じて変更） -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JavaScript（必要に応じて変更） -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body class="js_body white_body">
+    <header class="l_header js_header l_header_blue">
+      <p class="l_header_logo">
+        <a href="index.html" class="l_header_logo-link">mzk design</a>
+      </p>
+
+      <nav class="l_header_nav js_navigation">
+        <ul class="l_header_nav-list">
+          <li class="l_header_nav-item">
+            <a href="index.html#concept" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_concept.svg"
+                  alt="conceptのアイコン"
+                  class="l_header_nav-icon"
+                  width="24"
+                  height="17"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">大切な想い</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="index.html#service" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_service.svg"
+                  alt="serviceのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">できること</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="index.html#about" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_about.svg"
+                  alt="aboutのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">私のこと</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="works.html" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_works.svg"
+                  alt="worksのアイコン"
+                  class="l_header_nav-icon"
+                  width="24"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">作ったもの</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="process.html" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_process.svg"
+                  alt="processのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">すすめ方</span>
+            </a>
+          </li>
+
+          <li class="l_header_nav-item">
+            <a href="process.html#price" class="l_header_nav-link">
+              <div class="l_header_nav-icon-wrapper">
+                <img
+                  src="img/nav_price.svg"
+                  alt="priceのアイコン"
+                  class="l_header_nav-icon"
+                  width="23"
+                  height="24"
+                />
+              </div>
+              <span class="l_header_nav-link-txt">料金について</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="l_header_btn">
+        <a href="contact.html" class="m_btn m_btn__mail"
+          >ご相談<span class="u_dn-sp">・ご依頼</span>はこちら</a
+        >
+      </div>
+
+      <button class="m_hamburger js_hamburger">
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+      </button>
+
+      <svg
+        class="l_header_bg m_svg m_svg_blue"
+        preserveAspectRatio="none"
+        width="400"
+        height="25"
+        viewBox="0 0 400 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z" />
+      </svg>
+    </header>
+
+    <div class="m_kv m_kv_blue">
+      <svg
+        class="m_svg_bg-top m_svg m_svg_blue"
+        preserveAspectRatio="none"
+        width="400"
+        height="25"
+        viewBox="0 0 400 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z" />
+      </svg>
+
+      <div class="m_kv_box">
+        <h1 class="m_kv_head m_kv_head__contact">ご相談・ご依頼</h1>
+        <div class="m_kv_dotted-line"></div>
+
+        <p class="m_kv_msg">初めての方も安心してお問い合わせいただけます</p>
+      </div>
+
+      <svg
+        class="m_svg_bg-bottom m_svg m_svg_blue"
+        preserveAspectRatio="none"
+        width="400"
+        height="25"
+        viewBox="0 0 400 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z" />
+      </svg>
+    </div>
+
+    <main class="l_main kasou_main">
+      <p class="contact_msg">
+        ご相談内容がまとまっていなくても大丈夫です。<br />
+        まずはお気軽に、あなたの想いをお聞かせください。<br />
+        内容を確認後、通常1〜2営業日以内にご返信いたします。<br />
+      </p>
+
+      <section class="contact_form">
+        <div class="l_contents">
+          <div class="l_container-sm">
+            <svg
+              class="m_svg_bg-top m_svg m_svg_blue"
+              preserveAspectRatio="none"
+              width="400"
+              height="25"
+              viewBox="0 0 400 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z"
+              />
+            </svg>
+
+            <h2 class="m_section_ttl m_section_ttl__form">
+              お問い合わせフォーム
+            </h2>
+
+            <form action="" class="contact_form">
+              <dl class="contact_form_list">
+                <div class="contact_form_item">
+                  <dt class="contact_form_heading">
+                    <div class="contact_form_label">
+                      <span class="contact_form_title">お名前</span>
+                      <span class="contact_form_required">必須</span>
+                    </div>
+                    <span class="contact_form_example">例.佐藤太郎</span>
+                  </dt>
+                  <dd class="contact_form_detail">
+                    <input type="text" class="contact_form_input" />
+                  </dd>
+                </div>
+                <div class="contact_form_item">
+                  <dt class="contact_form_heading">
+                    <div class="contact_form_label">
+                      <span class="contact_form_title">会社名</span>
+                    </div>
+                    <span class="contact_form_example">例.株式会社しずく</span>
+                  </dt>
+                  <dd class="contact_form_detail">
+                    <input type="text" class="contact_form_input" />
+                  </dd>
+                </div>
+                <div class="contact_form_item">
+                  <dt class="contact_form_heading">
+                    <div class="contact_form_label">
+                      <span class="contact_form_title">TEL</span>
+                      <span class="contact_form_required">必須</span>
+                    </div>
+                    <span class="contact_form_example">例.000-0000-0000</span>
+                  </dt>
+                  <dd class="contact_form_detail">
+                    <input type="tel" class="contact_form_input" />
+                  </dd>
+                </div>
+                <div class="contact_form_item">
+                  <dt class="contact_form_heading">
+                    <div class="contact_form_label">
+                      <span class="contact_form_title">メールアドレス</span>
+                      <span class="contact_form_required">必須</span>
+                    </div>
+                    <span class="contact_form_example">例.info@sample.com</span>
+                  </dt>
+                  <dd class="contact_form_detail">
+                    <input type="email" class="contact_form_input" />
+                  </dd>
+                </div>
+                <div class="contact_form_item">
+                  <dt class="contact_form_heading">
+                    <div class="contact_form_label">
+                      <span class="contact_form_title">性別</span>
+                    </div>
+                  </dt>
+                  <dd class="contact_form_detail contact_form_detail__radio">
+                    <ul class="contact_form_radio-list">
+                      <li class="contact_form_radio-item">
+                        <input
+                          type="radio"
+                          name="content"
+                          value=""
+                          id="male"
+                          class="contact_form_radio"
+                          checked
+                        /><label for="male" class="contact_form_label"
+                          >男性</label
+                        >
+                      </li>
+                      <li class="contact_form_radio-item">
+                        <input
+                          type="radio"
+                          name="content"
+                          value=""
+                          id="female"
+                          class="contact_form_radio"
+                        /><label for="female" class="contact_form_label"
+                          >女性</label
+                        >
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="contact_form_item">
+                  <dt
+                    class="contact_form_heading contact_form_heading__content"
+                  >
+                    <div class="contact_form_label">
+                      <span class="contact_form_title">お問い合わせ内容</span>
+                      <span class="contact_form_required">必須</span>
+                    </div>
+                  </dt>
+                  <dd class="contact_form_detail contact_form_detail__content">
+                    <textarea
+                      class="contact_form_textarea contact_form_input"
+                      placeholder="問合せ内容をご記入ください。"
+                    ></textarea>
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="contact_form_btn-wrapper">
+                <div class="m_btn m_btn__send">
+                  <input type="submit" class="m_btn_input" value="送信" />
+                </div>
+                <!-- /.m_btn -->
+              </div>
+              <!-- /.contact_form_btn-wrapper -->
+            </form>
+
+            <svg
+              class="m_svg_bg-bottom m_svg m_svg_blue"
+              preserveAspectRatio="none"
+              width="400"
+              height="25"
+              viewBox="0 0 400 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M200 25C200 25 15.9971 25 0 0H400C380.497 25 200 25 200 25Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

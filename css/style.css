@@ -569,6 +569,9 @@ body.is-show {
 .m_section_ttl__price::before {
   content: "price";
 }
+.m_section_ttl__form::before {
+  content: "contact form";
+}
 
 /* svg背景 */
 .m_svg {
@@ -722,6 +725,9 @@ body.is-show {
 }
 .m_kv_head__process::after {
   content: "process";
+}
+.m_kv_head__contact::after {
+  content: "contact";
 }
 .m_kv_dotted-line {
   margin: 24px auto 0;
@@ -2317,6 +2323,18 @@ body.is-show {
 }
 
 /* ---------- contact ---------- */
+
+.contact_msg {
+  padding: 120px 0;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+}
+.contact_form {
+  background: var(--primary-color);
+  position: relative;
+}
 
 /* ---------- partner ---------- */
 
