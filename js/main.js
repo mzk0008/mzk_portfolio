@@ -192,3 +192,50 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const openBtn = document.querySelector(".js_open_modal");
+const modal = document.getElementById("privacy_modal");
+const closeBtns = document.querySelectorAll(".js_close_modal");
+const contentBox = document.getElementById("modal_policy_content");
+
+openBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // display: block にして初期状態で描画（opacity: 0）
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden";
+
+  // 2フレーム目で .show を付けることで transition 発火
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      modal.classList.add("show");
+    });
+  });
+
+  // 一度だけ読み込み
+  if (!contentBox.dataset.loaded) {
+    fetch("privacypolicy.html")
+      .then((res) => res.text())
+      .then((data) => {
+        contentBox.innerHTML = data;
+        contentBox.dataset.loaded = "true";
+      })
+      .catch(() => {
+        contentBox.innerHTML =
+          "<p>プライバシーポリシーの読み込みに失敗しました。</p>";
+      });
+  }
+});
+
+// 閉じる処理（ボタン・背景クリック）
+closeBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+
+    // 非表示に戻すのは transition 終了後に
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 600); // ← CSSの transition時間（0.6s）に合わせる
+  });
+});

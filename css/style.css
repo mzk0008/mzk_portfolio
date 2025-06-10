@@ -572,6 +572,9 @@ body.is-show {
 .m_section_ttl__form::before {
   content: "contact form";
 }
+.m_section_ttl__privacypolicy::before {
+  content: "privacypolicy";
+}
 
 /* svg背景 */
 .m_svg {
@@ -714,11 +717,21 @@ body.is-show {
   font-weight: bold;
   /* position: relative; */
 }
+@media screen and (min-width: 1080px) {
+  .m_kv_head {
+    font-size: 40px;
+  }
+}
 .m_kv_head::after {
   /* position: relative; */
   display: block;
   color: var(--auxiliary-color);
   font-size: 20px;
+}
+@media screen and (min-width: 1080px) {
+  .m_kv_head::after {
+    font-size: 24px;
+  }
 }
 .m_kv_head__works::after {
   content: "works";
@@ -747,6 +760,11 @@ body.is-show {
   text-align: center;
   width: 80%;
   margin: 16px auto 0;
+}
+@media screen and (min-width: 1080px) {
+  .m_kv_msg {
+    font-size: 18px;
+  }
 }
 
 /* accent */
@@ -2331,9 +2349,297 @@ body.is-show {
   line-height: 1.8;
   letter-spacing: 0.1em;
 }
+@media screen and (min-width: 1080px) {
+  .contact_msg {
+    font-size: 16px;
+  }
+}
 .contact_form {
   background: var(--primary-color);
   position: relative;
+  margin-bottom: 120px;
+}
+.contact_form-wrapper {
+  margin-top: 40px;
+}
+@media screen and (min-width: 1080px) {
+  .contact_form-wrapper {
+    margin-top: 80px;
+  }
+}
+.contact_form_list:not(:first-child) {
+  margin-top: 32px;
+}
+.contact_form_head {
+  display: flex;
+  gap: 8px;
+  font-weight: bold;
+  padding: 0 4px;
+}
+@media screen and (min-width: 1080px) {
+  .contact_form_head {
+    gap: 12px;
+    font-size: 18px;
+  }
+}
+.contact_form_required {
+  font-size: 10px;
+  padding: 1.5px 14px 1px;
+  background: var(--accent-color);
+  border-radius: 100vh;
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1080px) {
+  .contact_form_required {
+    font-size: 12px;
+  }
+}
+.contact_form_input {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--white-color);
+  font-size: 12px;
+  padding: 0 14px;
+  margin-top: 8px;
+  border: 2px solid transparent;
+}
+@media screen and (min-width: 1080px) {
+  .contact_form_input {
+    font-size: 14px;
+  }
+}
+.contact_form_input:focus {
+  transition: all 0.4s ease;
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(201, 117, 98, 0.2);
+  border: 2px solid rgba(201, 117, 98, 0.8);
+}
+.contact_form_check-list {
+  margin-top: 8px;
+}
+@media screen and (min-width: 1080px) {
+  .contact_form_check-list {
+    margin-top: 12px;
+  }
+}
+.contact_form_check-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.contact_form_check-item:not(:first-child) {
+  margin-top: 16px;
+}
+.contact_form_check {
+  appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--black-color);
+  border-radius: 2px;
+  background: var(--white-color);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.contact_form_check::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 4px;
+  width: 20px;
+  height: 10px;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid transparent;
+  transform: rotate(-45deg);
+  opacity: 0;
+  transition: all 0.3s ease; /* ←ここが重要！ */
+}
+.contact_form_check:checked::after {
+  border-bottom-color: var(--accent-color);
+  border-left-color: var(--accent-color);
+  opacity: 1;
+}
+@media screen and (min-width: 1080px) {
+  .contact_form_label {
+    font-size: 16px;
+  }
+}
+.contact_form_label:hover {
+  cursor: pointer;
+}
+.contact_form_textarea {
+  margin-top: 8px;
+  background: var(--white-color);
+  width: 100%;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 8px 14px;
+  border: 2px solid transparent;
+  height: 200px;
+}
+@media screen and (min-width: 1080px) {
+  .contact_form_textarea {
+    font-size: 14px;
+  }
+}
+.contact_form_textarea:focus {
+  transition: all 0.4s ease;
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(201, 117, 98, 0.2);
+  border: 2px solid rgba(201, 117, 98, 0.8);
+}
+.contact_form_agree {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.contact_form_agree-link {
+  text-decoration: underline;
+}
+@media screen and (min-width: 1080px) {
+  .contact_form_agree-link {
+    font-size: 16px;
+  }
+}
+
+/* モーダル全体 */
+.contact_form_modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-modal);
+  background: rgba(65, 69, 70, 0.6);
+  /* padding: 40px 16px; */
+  /* box-sizing: border-box;
+  overflow-y: auto; */
+  padding: 0 24px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  display: none;
+}
+
+/* 背景クリックで閉じられるレイヤー */
+.contact_form_modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* モーダルの中身コンテンツ */
+.contact_form_modal-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white-color);
+  border-radius: 8px;
+  padding: 40px 24px;
+  max-height: 80vh;
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(-50%) scale(0.95); /* ← 縮小から開始 */
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* スクロール可能な領域 */
+.contact_form_modal-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* 閉じるボタン */
+.modal_close_btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* 表示時：フェードイン＋拡大 */
+.contact_form_modal.show {
+  display: block;
+  opacity: 1;
+}
+.contact_form_modal.show .contact_form_modal-content {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+.contact_form_modal.show .l_header,
+.contact_form_modal.show .l_footer {
+  display: none;
+}
+.contact_form_modal.show .kasou_main {
+  margin-top: 0;
+}
+.contact_form_modal.show .m_section_ttl {
+  font-size: 16px;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 768px) {
+  .contact_form_modal.show .m_section_ttl {
+    font-size: 24px;
+  }
+}
+.contact_form_modal.show .m_section_ttl::before {
+  font-size: 40px;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 768px) {
+  .contact_form_modal.show .m_section_ttl::before {
+    font-size: 64px;
+  }
+}
+
+.contact_form_btn {
+  width: 200px;
+  height: 50px;
+  background: var(--accent-color);
+  border-radius: 100vh;
+  color: var(--white-color);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: 40px auto 0;
+  display: block;
+}
+
+/* ---------- privacypolicy ---------- */
+
+.privacypolicy_msg {
+  margin-top: 40px;
+}
+@media screen and (min-width: 1080px) {
+  .privacypolicy_msg,
+  .privacypolicy_txt,
+  .privacypolicy_date {
+    font-size: 16px;
+  }
+}
+.privacypolicy_head {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 40px;
+  color: var(--auxiliary-color);
+}
+@media screen and (min-width: 1080px) {
+  .privacypolicy_head {
+    font-size: 24px;
+  }
+}
+.privacypolicy_txt {
+  margin-top: 16px;
+}
+.privacypolicy_date {
+  text-align: right;
+  margin-top: 40px;
 }
 
 /* ---------- partner ---------- */
